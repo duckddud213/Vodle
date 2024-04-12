@@ -1,0 +1,89 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.tes'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /* Spring Boot */
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    /* MySql */
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    /* Spring JPA Data */
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    /* OAuth */
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    /* Spring Security */
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    /* Dev Auto */
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-devtools'
+
+    /* Lombok */
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    /* Jasypt */
+    implementation group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '3.0.5'
+
+    /* Redis */
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+	/* Swagger */
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    implementation 'io.swagger.core.v3:swagger-annotations:2.2.15'
+
+    /* JWT */
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.4'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.12.4'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.12.4'
+
+    /* gson */
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    /* okhttp3 */
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+
+    /* AWS S3 */
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+
+    /* Querydsl */
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+    /* openFeign */
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0'
+
+    /* Feign Form */
+    implementation 'io.github.openfeign.form:feign-form:3.8.0'
+    implementation 'io.github.openfeign.form:feign-form-spring:3.8.0'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

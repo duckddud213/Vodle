@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+# linux environment
+# Cython
+# python3-dev # for Cython but install exact python version ex)python3.9-dev
+-e git+https://github.com/cksghkd123/rvc.git#egg=rvc
+-e git+https://github.com/cksghkd123/rvc-tts-pipeline.git#egg=rvc_tts_pipe
+transformers
+openai-whisper
+pyttsx3
