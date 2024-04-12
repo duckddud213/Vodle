@@ -151,9 +151,8 @@ https://youtu.be/6GsL7m1SSGc
 <br>
 
 - Git Commit 제목
-
-  | 종류       | 내용 |
-   |----------|--------------------------------------------|
+  | 종류   | 내용                   |
+  |----------|--------------------------------------------|
   | feat     | 새로운 기능, 특징 추가                              |
   | fix      | 수정, 버그 수정                                  |
   | docs     | 문서(README, Java Doc, Swagger 등)에 관련된 내용, 문서 수정 |
@@ -198,39 +197,6 @@ https://youtu.be/6GsL7m1SSGc
     // 꼬리말 
     Related to: #48
     ```
-
-<br>
-
-#### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Cyclone.png" alt="Cyclone" width="15" height="15" /> Code
-- 프론트 코드 컨벤션
-
-<br>
-
-- 백엔드 코드 컨벤션
-    ```
-    // 메서드
-    1.메서드 이름은 lowerCamelCase로 작성
-    예) public void getUserByName() { }
-    
-    2.타입 변경시 to 전치사를 사용
-    예) public String toString(){ }
-
-    // 변수
-    1.변수 이름은 lowerCamelCase로 작성
-    예) String myMoneyOnAccount;
-  
-    2.상수 변수는 모두 대문자로 작성하며, 여러 단어일 경우 언더바를 사용
-    예) int MAX_SIZE;
-  
-    // 디렉터리 구조
-    1.도메인형으로 설계
-  
-    // 디렉터리 네이밍
-    1.패키지 이름은 소문자로 작성
-    2.클래스 파일 이름은 패키지 이름을 접미사로 포함
-    예) com.ssafy.server.domain.user.entity -> UserEntity
-    ```
-<br>
 
 <br>
 
@@ -304,7 +270,7 @@ https://youtu.be/6GsL7m1SSGc
 <br>
 
 #### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fountain.png" alt="Fountain" width="15" height="15" /> Git flow 이미지
-![img](./readme/Flow.PNG)
+![img](./README/Flow.png)
 
 <br>
 
@@ -372,7 +338,7 @@ https://youtu.be/6GsL7m1SSGc
 <br>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" alt="Desktop Computer" width="15" height="15" /> 화면 설계서
-![img](./README/Pigma.png)
+![img](./README/pigma.png)
 
 <br>
 
