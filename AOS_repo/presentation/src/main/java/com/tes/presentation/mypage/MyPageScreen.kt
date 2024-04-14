@@ -55,6 +55,7 @@ fun MyPageScreen(
             is MyPageViewState.VodleLog -> VodleLogView(vodleLogList = viewState.vodleLogList) {
                 viewModel.onTriggerEvent(MyPageViewEvent.OnClickBackButtonFromVodleLogView)
             }
+            is MyPageViewState.PrivacyPolicy -> PrivacyPolicyWebView()
         }
 
         VodleSnackBarHost(

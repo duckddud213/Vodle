@@ -37,7 +37,7 @@ internal fun MyPageView(
         OutLinedText(
             modifier = Modifier.padding(vertical = 12.dp),
             onClickText = { viewModel.onTriggerEvent(MyPageViewEvent.OnClickPrivacyPolicy) },
-            text = "개인정보처리 방침",
+            text = "개인정보처리방침/\n서비스 이용약관",
             textStyle = vodleTypoGraphy.bodyMedium.merge(TextStyle(fontSize = 24.sp)),
             strokeColor = Color.White,
             strokeWidth = 1f

@@ -22,7 +22,7 @@ class MyPageViewModel @Inject constructor(
     override fun onTriggerEvent(event: MyPageViewEvent) {
         when (event) {
             MyPageViewEvent.OnClickLogout -> logout()
-            MyPageViewEvent.OnClickPrivacyPolicy -> {}
+            MyPageViewEvent.OnClickPrivacyPolicy -> setState { showPrivacyPolicy() }
             is MyPageViewEvent.OnClickSignOut -> setState { tryingSignOut() }
             MyPageViewEvent.OnClickMyVodleLog -> fetchMyVodleLogs()
             is MyPageViewEvent.ShowToast -> setState { showToast(event.message) }
@@ -37,18 +37,21 @@ class MyPageViewModel @Inject constructor(
         when (this) {
             is MyPageViewState.Default -> this.copy(toastMessage = "")
             is MyPageViewState.VodleLog -> this.copy(toastMessage = "")
+            is MyPageViewState.PrivacyPolicy -> this.copy(toastMessage = "")
         }
 
     private fun MyPageViewState.showToast(message: String): MyPageViewState =
         when (this) {
             is MyPageViewState.Default -> this.copy(toastMessage = message)
             is MyPageViewState.VodleLog -> this.copy(toastMessage = message)
+            is MyPageViewState.PrivacyPolicy -> this.copy(toastMessage = message)
         }
 
     private fun MyPageViewState.backToMyPageView(): MyPageViewState =
         when (this) {
             is MyPageViewState.Default -> this
             is MyPageViewState.VodleLog -> MyPageViewState.Default()
+            is MyPageViewState.PrivacyPolicy -> MyPageViewState.Default()
         }
 
     private fun MyPageViewState.onSuccessFetchVodleLog(
@@ -57,6 +60,7 @@ class MyPageViewModel @Inject constructor(
         when (this) {
             is MyPageViewState.Default -> MyPageViewState.VodleLog(vodleLogList)
             is MyPageViewState.VodleLog -> this
+            is MyPageViewState.PrivacyPolicy -> this
         }
 
     private fun fetchMyVodleLogs() {
@@ -79,6 +83,7 @@ class MyPageViewModel @Inject constructor(
         when (this) {
             is MyPageViewState.Default -> copy(isTryingSignOut = false)
             is MyPageViewState.VodleLog -> this
+            is MyPageViewState.PrivacyPolicy -> this
         }
 
     private fun logout() {
@@ -98,6 +103,7 @@ class MyPageViewModel @Inject constructor(
         when (this) {
             is MyPageViewState.Default -> this.copy(isTryingSignOut = true)
             is MyPageViewState.VodleLog -> this
+            is MyPageViewState.PrivacyPolicy -> this
         }
 
     private fun signOut(accessToken: String) {
@@ -121,5 +127,13 @@ class MyPageViewModel @Inject constructor(
         when (this) {
             is MyPageViewState.Default -> this.copy(isLogin = false)
             is MyPageViewState.VodleLog -> this
+            is MyPageViewState.PrivacyPolicy -> this
+        }
+
+    private fun MyPageViewState.showPrivacyPolicy(): MyPageViewState =
+        when (this) {
+            is MyPageViewState.Default -> MyPageViewState.PrivacyPolicy()
+            is MyPageViewState.VodleLog -> this
+            is MyPageViewState.PrivacyPolicy -> this
         }
 }

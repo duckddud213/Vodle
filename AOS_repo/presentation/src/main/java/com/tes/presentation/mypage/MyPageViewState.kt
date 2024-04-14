@@ -22,4 +22,10 @@ sealed class MyPageViewState : ViewState {
         override val toastMessage: String = ""
     ) :
         MyPageViewState()
+
+    data class PrivacyPolicy(
+        override val isLogin: Boolean = true,
+        override val isTryingSignOut: Boolean = false,
+        override val toastMessage: String = ""
+    ) : MyPageViewState()
 }
