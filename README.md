@@ -1,5 +1,5 @@
 # <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f386/512.gif" alt="🎆" width="28" height="28"> VODLE <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f386/512.gif" alt="🎆" width="28" height="28">
-### 현재 자신의 위치에서 텍스트 및 음성으로 기록을 남기는 서비스입니다. <br> 자신의 목소리로도 남길 수 있고 인기있는 목소리를 통해 변조하여 남길 수 있습니다.
+### 현재 자신의 위치에서 텍스트 및 음성으로 기록을 남기는 서비스입니다. <br> 자신의 목소리로도 남길 수 있고 인기있는 목소리를 통해 변조하여 남길 수 있습니다. <br> https://play.google.com/store/apps/details?id=com.tes.vodleapp
 <br>
 
 ## <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.gif" alt="🔥" width="32" height="32"> VODLE 소개 및 (UCC+시연) 영상
